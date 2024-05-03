@@ -13,11 +13,8 @@ class Definitions extends React.Component {
                     </React.Fragment>
                 ))}
             </dl>
-
         )
-
     }
-
 }
 
 Definitions.defaultProps = [
