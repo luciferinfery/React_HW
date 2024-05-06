@@ -1,17 +1,12 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import Alert from './components/Alert.jsx';
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
+function App() {
+    return (
+        <>
+            <Alert type="warning" text="What is love?" />
+        </>
+    );
 }
 
-export default Card;
+export default App;
