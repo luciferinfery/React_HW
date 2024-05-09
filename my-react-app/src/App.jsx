@@ -1,17 +1,21 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import Carousel from './components/Carousel.jsx';
+const images = [
+    './src/assets/img/Eric.jpg',
+    './src/assets/img/Rhez.jpg',
+    './src/assets/img/Riten-Dharia.jpg',
+    './src/assets/img/Tayfun-Coskun.jpg',
+    './src/assets/img/Tihomir-Trichkov.jpg'
+];
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div className="container container-1200">
+            <h1>Carousel Example</h1>
+            <Carousel images={images} />
+        </div>
+    );
+};
 
-export default Card;
+export default App;
+
