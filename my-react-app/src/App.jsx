@@ -1,17 +1,13 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import BtnGroup from './components/BtnGroup';
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div className="container">
+            <h1>Button Group</h1>
+            <BtnGroup />
+        </div>
+    );
+};
 
-export default Card;
+export default App;
