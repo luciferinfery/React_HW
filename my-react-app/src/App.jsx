@@ -1,17 +1,47 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import cn from 'classnames';
 
-class Card extends React.Component {
+class Collapse extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            opened: this.props.opened,
+        }
+    }
+
+    isOpened = () => {
+        this.setState(({ opened: !this.state.opened }))
+    }
+
     render() {
+
+        const isShow = cn(
+            'collapse',
+            this.state.opened ? 'show' : ''
+        )
+
+        const isExpanded = this.state.opened ? "true" : "false";
+
+        const { text } = this.props;
         return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
+            <div>
+                <p>
+                    <a className="btn btn-primary" data-bs-toggle="collapse" href="#" role="button"
+                       aria-expanded={isExpanded} onClick={this.isOpened}>Link with href</a>
+                </p>
+                <div className={isShow}>
+                    <div className="card card-body">
+                        {text}
+                    </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default Card;
+Collapse.defaultProps = {
+    text: 'This is hidden text. Click the link to reveal it.',
+    opened: true
+}
+
+export default Collapse;
