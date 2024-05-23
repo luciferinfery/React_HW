@@ -1,17 +1,34 @@
-import React from 'react';
-import Progress from "./components/Progress.jsx";
+import React from "react";
+import MyForm from "./components/MyForm";
+import {Container} from "react-bootstrap";
+import {cloneDeep} from "lodash";
+import DataTable from "./components/DataTable";
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: null,
+            UIShowTable: false
+        }
+    }
 
-class Card extends React.Component {
+    onSubmitHandler = (formData) => {
+        const formDataCopy = cloneDeep(formData);
+        this.setState({data: formDataCopy, UIShowTable: true})
+    }
+
+    handleClick = (e) => {
+        this.setState({UIShowTable: false})
+    }
+
     render() {
         return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
+            <Container>
+                {!this.state.UIShowTable && <MyForm onSubmit={this.onSubmitHandler} formData={this.state.data} />}
+                {this.state.UIShowTable && <DataTable tableData={this.state.data} onClickBack={this.handleClick}/>}
+            </Container>
         );
     }
 }
 
-export default Card;
+export default App;
