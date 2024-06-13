@@ -1,17 +1,13 @@
-import React from 'react';
-import Progress from "./components/Progress.jsx";
+import TodoBox from "./components/TodoBox/index.js";
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
+function App() {
+
+    return (
+        <>
+            <TodoBox/>
+
+        </>
+    )
 }
 
-export default Card;
+export default App
