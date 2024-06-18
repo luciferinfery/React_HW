@@ -1,17 +1,12 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import Component from './components/Component/Component';
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
+function App() {
+    return (
+        <div className="App">
+            <Component />
+        </div>
+    );
 }
 
-export default Card;
+export default App;
