@@ -1,17 +1,20 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AlbumList from '../src/components/AlbumList.jsx';
+import AlbumPhotos from '../src/components/AlbumPhotos.jsx';
+import './App.css';
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
+function App() {
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<AlbumList />} />
+                    <Route path="/album/:id" element={<AlbumPhotos />} />
+                </Routes>
             </div>
-        );
-    }
+        </Router>
+    );
 }
 
-export default Card;
+export default App;
