@@ -1,17 +1,16 @@
-import React from 'react';
-import Progress from "./components/Progress.jsx";
+import MarkdownEditor from "./components/MarkdownEditor/MarkdownEditor.jsx";
+import React from "react";
 
-class Card extends React.Component {
+class App extends React.Component {
+
     render() {
         return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
+            <>
+                <MarkdownEditor onContentChange={console.log}/>
+            </>
+        )
     }
+
 }
 
-export default Card;
+export default App
