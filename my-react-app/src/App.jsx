@@ -1,17 +1,20 @@
 import React from 'react';
-import Progress from "./components/Progress.jsx";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import TodoBox from './components/TodoBox/TodoBox.jsx';
 
-class Card extends React.Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Task Progress</h5>
-                    <Progress percentage={40} />
-                </div>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <Container className="mt-5">
+            <Row>
+                <Col>
+                    <h1 className="mb-4">Todo List</h1>
+                    <TodoBox />
+                </Col>
+            </Row>
+        </Container>
+    );
+};
 
-export default Card;
+export default App;
